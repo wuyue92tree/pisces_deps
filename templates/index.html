@@ -1,0 +1,16 @@
+<html>
+  <title>首页</title>
+  <body>
+    <button onclick="go('/forward')">向前</button>
+    <button onclick="go('/backward')">向后</button>
+    <button onclick="go('/left')">向左</button>
+    <button onclick="go('/right')">向右</button>
+    <button onclick="go('/stop')">停止</button>
+  </body>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    function go(url) {
+      $.get(url)
+    }
+  </script>
+</html>
