@@ -8,10 +8,12 @@ class Infrared(object):
     mode为GPIO接口使用的模式
     """
     def __init__(self, out, mode=GPIO.BCM):
+        self.out = out
+        GPIO.setwarnings(False)
         GPIO.setmode(mode)
-        GPIO.setup(OUT, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+        GPIO.setup(self.out, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-    def loop(self):
-        while True:
-            if (GPIO.input(OUT) == 0):
-                print("Detected Barrier!")
+    def status(self):
+        if (GPIO.input(self.out) == 0):
+            return True
+        return False

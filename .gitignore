@@ -1,0 +1,10 @@
+*.pyc
+.DS_Store
+.idea
+*.db
+*.conf
+__pycache__
+.vscode
+dist
+build
+*.egg-info

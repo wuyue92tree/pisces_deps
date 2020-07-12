@@ -39,11 +39,13 @@ class Car(object):
         # 控制电机转动，下面两个类似，省去了实现
         GPIO.output(motor[0], GPIO.HIGH)
         GPIO.output(motor[1], GPIO.LOW)
-
+    
+    @staticmethod
     def __motor_backward(motor):
         GPIO.output(motor[0], GPIO.LOW)
         GPIO.output(motor[1], GPIO.HIGH)
 
+    @staticmethod
     def __motor_stop(motor):
         GPIO.output(motor[0], GPIO.LOW)
         GPIO.output(motor[1], GPIO.LOW)
